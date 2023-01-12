@@ -17,6 +17,7 @@ def language_detection():
     resArray = []
     for element in request.json:
         text = element['tweet_text']
+        text = text.replace("\n","")
     # Read the text of the tweet from the request body
         is_english = detect(text) == 'en'
      # Detect the language of the text
